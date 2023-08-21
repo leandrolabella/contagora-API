@@ -1,5 +1,7 @@
 package br.com.devleo.contagora.domain.cards;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import br.com.devleo.contagora.domain.User;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -26,8 +28,10 @@ public class Card {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String nickname;
     @ManyToOne
     @JoinColumn(name="user_id")
+    @JsonIgnore
     private User user;
     @Enumerated(EnumType.STRING)
     private CardType cardType;
