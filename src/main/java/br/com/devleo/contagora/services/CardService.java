@@ -21,6 +21,10 @@ public class CardService {
     @Autowired
     private UserService userService;
 
+    public Card getCard(Long id){
+        return cardRepository.findById(id).orElse(null);
+    }
+
     public Card saveCard(CardDTO data){
         Card newcard = new Card();
         User user = userService.getUser(data.userId());

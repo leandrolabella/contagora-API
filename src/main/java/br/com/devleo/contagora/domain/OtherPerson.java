@@ -1,5 +1,7 @@
 package br.com.devleo.contagora.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import br.com.devleo.contagora.domain.cards.Card;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -27,7 +29,7 @@ public class OtherPerson {
     private String name;
     @ManyToOne
     @JoinColumn(name="card_id")
+    @JsonIgnore
     private Card card;
-
     
 }
