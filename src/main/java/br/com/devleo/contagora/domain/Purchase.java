@@ -25,7 +25,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode(of="id")
+@EqualsAndHashCode(of = "id")
 public class Purchase {
 
     @Id
@@ -34,13 +34,13 @@ public class Purchase {
     private String description;
     private BigDecimal amount;
     private boolean hasInstallments;
-    private int installments;
+    private Integer installments;
 
     @ManyToOne
     @JoinColumn(name = "card_id")
     @JsonIgnore
     private Card card;
-    
+
     private LocalDateTime timestamp;
-    
+
 }

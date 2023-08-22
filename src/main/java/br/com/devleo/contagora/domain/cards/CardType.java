@@ -5,5 +5,6 @@ public enum CardType {
     VISA,
     ELO,
     AMERICAN_EXPRESS,
-    HIPERCARD
+    HIPERCARD,
+    DISCOVER
 }

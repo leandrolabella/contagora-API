@@ -21,8 +21,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity(name="cards")
-@Table(name="cards")
+@Entity(name = "cards")
+@Table(name = "cards")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -33,13 +33,14 @@ public class Card {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nickname;
+    private Integer statementDay;
     @ManyToOne
-    @JoinColumn(name="user_id")
+    @JoinColumn(name = "user_id")
     @JsonIgnore
     private User user;
     @Enumerated(EnumType.STRING)
     private CardType cardType;
     @OneToMany
-    @JoinColumn(name="card_id")
+    @JoinColumn(name = "card_id")
     private List<OtherPerson> otherPerson;
 }
